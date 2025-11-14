@@ -155,7 +155,8 @@ Ejemplo:
 ```
 <td>Manzanas</td>
 ```
-
+#### Exemple portat a una activitat
+![imagenhorario](./horarioclase.png)
 ### Atributos Especiales de Tablas
 ```
 colspan="X"
@@ -249,7 +250,8 @@ Ejemplo:
 ```
 <input type="checkbox" name="intereses" value="musica"> Música
 ```
-
+### Exemple portat a una activitat
+![newsletter](Newsletter.png)
 #### Listas Desplegables
 ```
 <select>
