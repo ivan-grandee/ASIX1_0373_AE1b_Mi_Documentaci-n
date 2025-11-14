@@ -1,5 +1,6 @@
-# ASIX1_0373_AE1b_Mi_Documentaci-n
+# ASIX1_0373_AE1b_Mi_Documentaci-n #
 ## Github y Git ##
+[imagengithub] (./github.png)
 ### ¿Qué es GitHub? ###
 GitHub es una plataforma online que aloja repositorios Git.
 Además permite colaborar, revisar código, gestionar proyectos y compartir tu trabajo.
@@ -51,7 +52,7 @@ Se basa en etiquetas (tags) que definen los diferentes elementos de la página: 
 
 ### Estructura básica de un documento HTML
 
-'''<!DOCTYPE html>
+'<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -61,7 +62,7 @@ Se basa en etiquetas (tags) que definen los diferentes elementos de la página: 
 <body>
   <!-- Contenido visible -->
 </body>
-</html>'''
+</html>'
 
 
 
