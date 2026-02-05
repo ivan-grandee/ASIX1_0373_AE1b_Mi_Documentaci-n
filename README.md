@@ -433,3 +433,47 @@ Es una herramienta oficial del W3C que verifica si el código HTML cumple con lo
 #### Cómo se ve el validador
 
 ![imagenvalidador](./newslettercheck.png)
+
+
+
+## SELECTORES CSS Y ESPECIFICIDAD
+Los selectores definen sobre qué elementos HTML se aplicarán los estilos. No todos tienen la misma fuerza o "peso".
+
+### 1. Tipos de Selectores
+* **Universal (`*`)**: Selecciona todo en el documento.
+* **De Etiqueta (`h1`, `div`)**: Afecta a todos los elementos de ese tipo.
+* **De Clase (`.clase`)**: Selecciona elementos con el atributo class. Reutilizable.
+* **De ID (`#id`)**: Selecciona un único elemento. Muy alta prioridad.
+
+### 2. Combinadores
+* **Hijo Directo (`>`)**: `li > a` (solo enlaces que son hijos inmediatos de un li).
+* **Descendiente (espacio)**: `#gallery div` (todos los div dentro de #gallery, sin importar nivel).
+* **Múltiple (`,`)**: `h1, .titulo` (aplica el mismo estilo a ambos).
+
+### 3. Especificidad (Jerarquía)
+Si dos reglas chocan, el navegador elige la más específica siguiendo este orden de peso:
+1.  **Estilos en línea** (`style="..."`).
+2.  **ID** (`#nombre`).
+3.  **Clases, Pseudoclases y Atributos** (`.clase`, `:hover`).
+4.  **Elementos y Pseudoelementos** (`p`, `::before`).
+
+---
+
+## MAQUETACIÓN: FLEXBOX Y OVERFLOW
+La maquetación controla cómo se distribuyen los elementos y qué ocurre cuando el contenido excede su tamaño.
+
+### 1. Desbordamiento (Overflow)
+Controla el contenido que se sale de los límites de una caja:
+* `overflow: visible`: El contenido se sale y se ve (por defecto).
+* `overflow: hidden`: Lo que sobra se corta y desaparece.
+* `overflow: scroll`: Añade barras de navegación siempre.
+* `overflow: auto`: Añade barras solo si el contenido no cabe.
+
+**Truco para textos (`text-overflow`):**
+Para que un texto largo no rompa el diseño y muestre puntos suspensivos:
+```css
+.noticia {
+    white-space: nowrap;    /* Evita el salto de línea */
+    overflow: hidden;       /* Oculta lo que sobra */
+    text-overflow: ellipsis;/* Añade los "..." */
+}
