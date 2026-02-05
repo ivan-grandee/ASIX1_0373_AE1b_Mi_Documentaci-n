@@ -456,6 +456,7 @@ Si dos reglas chocan, el navegador elige la más específica siguiendo este orde
 2.  **ID** (`#nombre`).
 3.  **Clases, Pseudoclases y Atributos** (`.clase`, `:hover`).
 4.  **Elementos y Pseudoelementos** (`p`, `::before`).
+![imagenselectores].(./CSS-Selectors-02-05-2026_06_40_PM.png)
 
 ---
 
@@ -468,12 +469,54 @@ Controla el contenido que se sale de los límites de una caja:
 * `overflow: hidden`: Lo que sobra se corta y desaparece.
 * `overflow: scroll`: Añade barras de navegación siempre.
 * `overflow: auto`: Añade barras solo si el contenido no cabe.
+* **Text Overflow**: Para textos largos que no caben, usamos `text-overflow: ellipsis` junto con `white-space: nowrap` para crear los famosos puntos suspensivos (...).
 
-**Truco para textos (`text-overflow`):**
-Para que un texto largo no rompa el diseño y muestre puntos suspensivos:
+### 2. Flexbox (`display: flex`)
+Es un modelo de caja que permite alinear elementos fácilmente.
+* **Contenedor**: Se usa `justify-content` (eje horizontal) y `align-items` (eje vertical).
+* **Flex Wrap**: `flex-wrap: wrap` es esencial; si los elementos no caben en una línea, saltan a la siguiente.
+
+---
+
+## POSICIONAMIENTO (`position`)
+Controla cómo se colocan los elementos fuera del flujo normal.
+
+| Propiedad | Uso Principal |
+| :--- | :--- |
+| **`static`** | El valor por defecto. Sigue el orden del HTML. |
+| **`relative`** | Se mueve sin afectar a los demás. Sirve de referencia para hijos absolutos. |
+| **`absolute`** | Se coloca respecto al padre relativo más cercano. "Flota" sobre el diseño. |
+| **`fixed`** | Se queda pegado a la pantalla (Viewport). No le afecta el scroll. |
+| **`sticky`** | Se queda pegado al techo cuando llegas a él haciendo scroll, pero no sale de su padre. |
+
+---
+
+## DISEÑO RESPONSIVE (MEDIA QUERIES)
+El diseño responsive permite que una web se vea bien tanto en un monitor de PC como en un móvil. Se basa en detectar el ancho de la pantalla y aplicar reglas diferentes.
+
+### 1. Puntos de Interrupción (Breakpoints)
+* **Escritorio (Desktop)**: Se define por defecto (ej: 4 columnas al 25%).
+* **Tablet (max-width: 900px)**: Se ajusta a 2 columnas (50%).
+* **Móvil (max-width: 600px)**: Se ajusta a 1 columna (100%).
+
+### 2. Ejemplo de código Responsive
 ```css
-.noticia {
-    white-space: nowrap;    /* Evita el salto de línea */
-    overflow: hidden;       /* Oculta lo que sobra */
-    text-overflow: ellipsis;/* Añade los "..." */
+/* Configuración por defecto (Pantallas grandes) */
+.card-container {
+    width: 25%;
+    display: flex;
+}
+
+/* Ajuste para tablets (iPad Mini) */
+@media (max-width: 900px) {
+    .card-container {
+        width: 50%; /* Ahora caben dos por fila */
+    }
+}
+
+/* Ajuste para móviles (iPhone) */
+@media (max-width: 600px) {
+    .card-container {
+        width: 100%; /* Una tarjeta por fila */
+    }
 }
