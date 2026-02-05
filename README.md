@@ -456,7 +456,7 @@ Si dos reglas chocan, el navegador elige la más específica siguiendo este orde
 2.  **ID** (`#nombre`).
 3.  **Clases, Pseudoclases y Atributos** (`.clase`, `:hover`).
 4.  **Elementos y Pseudoelementos** (`p`, `::before`).
-![imagenselectores].(./CSS-Selectors-02-05-2026_06_40_PM.png)
+![imagenselectores](./CSS-Selectors-02-05-2026_06_40_PM.png)
 
 ---
 
